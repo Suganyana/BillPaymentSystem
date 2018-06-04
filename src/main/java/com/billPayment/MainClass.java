@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class MainClass {
-
+//created to start application
 	@Bean 
 	public SessionFactory setSessionFactory(HibernateEntityManagerFactory hemf) {
 		return hemf.getSessionFactory();
