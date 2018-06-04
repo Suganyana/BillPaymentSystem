@@ -9,11 +9,12 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class MainClass {
-//created to start application
+//created to start application1
 	@Bean 
 	public SessionFactory setSessionFactory(HibernateEntityManagerFactory hemf) {
 		return hemf.getSessionFactory();
 	}
+	
 	
 	
 	public static void main(String[] args) {
