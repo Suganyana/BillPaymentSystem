@@ -1,15 +1,19 @@
-package com.billPayment.loginController;
+package com.billPayment.Controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.billPayment.login.Login;
-import com.billPayment.login.service.LoginService;
+
+import com.billPayment.pojo.Login;
+import com.billPayment.service.LoginService;
+
 
 @RestController
+@CrossOrigin
 public class LoginController {
 	
 	@Autowired
@@ -17,8 +21,8 @@ public class LoginController {
 	
 	
 	@RequestMapping("doLogin")
-	public boolean doLogin(@RequestBody Login login) {
-		
+	public Login doLogin(@RequestBody Login login) {
+		System.out.println(login);
 	return	loginservice.authenticateUser(login);
 
 	}

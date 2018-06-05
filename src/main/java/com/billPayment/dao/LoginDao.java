@@ -1,8 +1,9 @@
-package com.billPayment.login.dao;
+package com.billPayment.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.billPayment.login.Login;
+
+import com.billPayment.pojo.Login;
 @Repository
 public interface LoginDao {
 
