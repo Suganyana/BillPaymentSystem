@@ -1,12 +1,12 @@
-package com.billPayment.login.service;
+package com.billPayment.service;
 
 import org.springframework.stereotype.Service;
 
-import com.billPayment.login.Login;
+import com.billPayment.*;
+import com.billPayment.pojo.Login;
 
 @Service
 public interface LoginService {
 
-	
-	public boolean authenticateUser(Login login);
+	public Login authenticateUser(Login login);
 }

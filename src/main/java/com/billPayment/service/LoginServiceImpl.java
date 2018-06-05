@@ -1,28 +1,33 @@
-package com.billPayment.login.service;
+package com.billPayment.service;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.billPayment.login.Login;
-import com.billPayment.login.dao.LoginDao;
+import com.billPayment.*;
+import com.billPayment.dao.LoginDao;
+import com.billPayment.dao.LoginDaoImpl;
+
+import com.billPayment.pojo.Login;
+
 
 @Service
 public class LoginServiceImpl implements LoginService {
 
 	@Autowired
-	LoginDao LoginDao;
+	LoginDao loginDao;
 	
 	@Override
-	public boolean authenticateUser(Login login) {
+	public Login authenticateUser(Login login) {
 		// TODO Auto-generated method stub
-		boolean status=false;
-		Login currentUser=LoginDao.getUserByUserIdAndPassword(login);
-		if(currentUser!=null) {
-			status=true;
+		Login currentUser=loginDao.getUserByUserIdAndPassword(login);
+		System.out.println("dbuser="+currentUser);
+		if(currentUser==null||!currentUser.getPassword().equals(login.getPassword())) {
+			currentUser.setLoginStatus(false);
 		}else {
-			status=false;
+			currentUser.setLoginStatus(true);
 		}
-		return status;
+		return currentUser;
 	}
 
 }

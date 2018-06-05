@@ -8,13 +8,12 @@ import org.springframework.context.annotation.Bean;
 
 
 @SpringBootApplication
-public class MainClass {
+public class MainClass {						
 //created to start application1sdghadfhjasdfhjauas.zxnhs
 	@Bean 
 	public SessionFactory setSessionFactory(HibernateEntityManagerFactory hemf) {
 		return hemf.getSessionFactory();
 	}
-	
 	
 	
 	public static void main(String[] args) {
